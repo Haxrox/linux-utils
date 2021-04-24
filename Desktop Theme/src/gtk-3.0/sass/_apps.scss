@@ -367,12 +367,12 @@ paned.titlebar.horizontal { // show border
   }
 }
 
-/* Only normal state is handle */
+// Only normal state is handle
 .open-document-selector-name-label {
   font-weight: bold;
 }
 
-/* Only normal state is handle */
+// Only normal state is handle
 .open-document-selector-path-label {
   color: gtkalpha(currentColor, $hint_opacity);
   font-size: smaller;
@@ -400,7 +400,7 @@ paned.titlebar.horizontal { // show border
   border-top: 0px;
 }
 
-/* Try to look as the notebook tab close button */
+// Try to look as the notebook tab close button
 .gedit-document-panel row button.flat {
   @extend %small_button;
 }
@@ -409,7 +409,7 @@ paned.titlebar.horizontal { // show border
   border-top: 1px solid $borders_color;
 }
 
-.gedit-search-slider {
+.background .gedit-search-slider {
   margin: 4px 4px 8px;
 
   .gedit-search-entry-occurrences-tag {
@@ -423,11 +423,13 @@ paned.titlebar.horizontal { // show border
   popover.background {
     transition: $shadow_transition;
     padding: 0;
-    box-shadow:  $z-depth-2; // TODO: this should really have a highlight
-    background-color: $dark_contrast_color;
+    box-shadow: $z-depth-2; // TODO: this should really have a highlight
+    background-color: $lighter_bg_color;
   }
 
-  entry {
+  > .linked:not(.vertical) > entry {
+    @extend %entry_native;
+
     &:dir(ltr) {
       margin-right: -$medium_size * 2;
       padding-right: $medium_size * 2 + 8px;
@@ -487,7 +489,7 @@ paned.titlebar.horizontal { // show border
     }
   }
 
-  button {
+  > .linked:not(.vertical) > button {
     @extend %simple_flat_button;
 
     &:dir(ltr),
@@ -498,7 +500,7 @@ paned.titlebar.horizontal { // show border
 // Yeah this is ugly
 .gedit-search-slider .linked:not(.vertical) > entry,
 notebook > stack:not(:only-child) revealer .gedit-search-slider .linked:not(.vertical) > entry {
-  border-radius: 2px;
+  border-radius: $md_radius;
 }
 
 //
@@ -625,35 +627,25 @@ window.background > box.vertical box.horizontal {
 //
 // Builder
 //
-// based css:
-// https://git.gnome.org/browse/gnome-builder/tree/data/theme
-// hard-coded css:
-// https://git.gnome.org/browse/gnome-builder/tree/data/theme/shared.css
-
-// Titlebar adjustments for workbench
-//
-// This is needed due to our placement of headerbar inside of a
-// stack. We were seeing black edges around the header bar, and
-// improper radius on the headerbar.
-//
-workbench.csd > stack.titlebar:not(headerbar) {
-  padding: 0;
-  background: none;
-  border: none;
-  box-shadow: none;
-  border-radius: 2px 2px 0 0;
+workbench.csd,
+window.csd.org-gnome-Builder {
+  > stack.titlebar {
+    box-shadow: 0 2px 3px -2px rgba(black, 0), 0 1px 2px -1px rgba(black, 0), 0 1px 2px -.6px rgba(black, 0);
+  }
 }
 
-workbench.csd:not(.tiled):not(.maximized):not(.fullscreen) > stack.titlebar:not(headerbar) {
-  headerbar {
-    &,
-    &:first-child,
-    &:last-child {
-      border-radius: 2px 2px 0 0;
-      border-bottom: 1px solid $borders_color;
+// Popover
+popover.background.dzlmenubutton {
+  button.dzlmenubuttonitem {
+    &:active, &:checked, &:hover {
+      label {
+        color: $fg_color;
+        transition: none;
+      }
     }
   }
 }
+
 
 perspectiveswitcher {
   background-color: $bg_color;
@@ -817,10 +809,6 @@ editortweak entry.search {
   box-shadow: none;
 }
 
-//
-// let's tweak hard-coded elements
-//
-
 // styling for editor search
 frame.gb-search-frame {
   // border-bottom-left-radius: 5px;
@@ -835,18 +823,6 @@ frame.gb-search-frame {
 // Keep search bar and layouttab height in sync.
 docktabstrip {
   min-height: 39px;
-}
-
-layouttabbar > box {
-  // min-height: 39px;
-}
-
-eggsearchbar > revealer > box {
-  // min-height: 39px;
-}
-
-eggsearchbar entry {
-  // min-height: 24px;
 }
 
 workbench preferences preferencesgroup list entry {
