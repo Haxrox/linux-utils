@@ -5,7 +5,7 @@ Ubuntu dependencies
 - `sudo ./install.sh`
 
 **Grub2:**
-- `sudo ./install.sh -v -4 -w
+- `sudo ./install.sh -v -4 -w`
 
 **Icon:**
 - `sudo ./install.sh`
