@@ -1,0 +1,15 @@
+[submodule "materia-theme"]
+	path = materia-theme
+	url = https://github.com/nana-4/materia-theme.git
+[submodule "grub2-themes"]
+	path = grub2-themes
+	url = https://github.com/vinceliuice/grub2-themes.git
+[submodule "linux-surface"]
+	path = linux-surface
+	url = https://github.com/linux-surface/linux-surface.git
+[submodule "bluez"]
+	path = bluez
+	url = https://github.com/bluez/bluez.git
+[submodule "linux"]
+	path = linux
+	url = https://github.com/torvalds/linux.git
