@@ -9,3 +9,9 @@ Ubuntu dependencies
 
 **Icon:**
 - `sudo ./install.sh`
+
+**.bash_personal:**
+```bash
+cp .bash_personal ~
+echo -e "\nsource ~/.bash_personal >> ~/.bashrc"
+```
