@@ -2,8 +2,9 @@
 BASH_LIB_ROOT=$(dirname "${BASH_SOURCE[0]}")
 
 # Libraries
-source "${BASH_LIB_ROOT}/prompt_lib/prompt_lib.sh"
-source "${BASH_LIB_ROOT}/python_lib/python_lib.sh"
+for lib in $(ls -d ${BASH_LIB_ROOT}/*/); do
+  source "${lib}/$(basename ${lib}).sh"
+done
 
 # Aliases
 
