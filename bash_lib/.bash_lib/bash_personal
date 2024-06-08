@@ -1,0 +1,6 @@
+
+source "$(dirname "${BASH_SOURCE[0]}")/prompt_lib/prompt_lib.sh"
+
+setPrompt "$(echo '${PROMPT_PREPEND}')\[${BGreen}\][\@]\[${Red}\]$(echo '$(__git_ps1 ["%s"])')$(echo '${PROMPT_APPEND}')\[${BBlue}\]\w/${Color_Off}$ "
+
+
