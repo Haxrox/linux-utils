@@ -1,6 +1,15 @@
 
-source "$(dirname "${BASH_SOURCE[0]}")/prompt_lib/prompt_lib.sh"
+BASH_LIB_ROOT=$(dirname "${BASH_SOURCE[0]}")
 
-setPrompt "$(echo '${PROMPT_PREPEND}')\[${BGreen}\][\@]\[${Red}\]$(echo '$(__git_ps1 ["%s"])')$(echo '${PROMPT_APPEND}')\[${BBlue}\]\w/${Color_Off}$ "
+# Libraries
+source "${BASH_LIB_ROOT}/prompt_lib/prompt_lib.sh"
+source "${BASH_LIB_ROOT}/python_lib/python_lib.sh"
 
+# Aliases
 
+# Code
+function main() {
+  setPrompt "$(echo '${PROMPT_PREPEND}')\[${BGreen}\][\@]\[${Red}\]$(echo '$(__git_ps1 ["%s"])')$(echo '${PROMPT_APPEND}')\[${BBlue}\]\w/${Color_Off}$ "
+}
+
+main "$@"
