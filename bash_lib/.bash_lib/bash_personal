@@ -10,7 +10,7 @@ done
 
 # Code
 function main() {
-  setPrompt "$(echo '${PROMPT_PREPEND}')\[${B_GREEN}\][\@]\[${RED}\]$(echo '$(__git_ps1 ["%s"])')$(echo '${PROMPT_APPEND}')\[${B_BLUE}\]\w/${NO_COLOR}$ "
+  setPrompt "\[$(echo '${PROMPT_PREPEND}')\]\[${BGreen}\][\@]\[${Red}\]\[$(echo '$(__git_ps1 ["%s"])')$(echo '${PROMPT_APPEND}')\]\[${BBlue}\]\w/\[${Color_Off}\]$ "
 }
 
 main "$@"
