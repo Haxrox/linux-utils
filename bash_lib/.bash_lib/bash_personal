@@ -9,8 +9,8 @@ done
 # Aliases
 
 # Code
-function main() {
-  setPrompt "\[$(echo '${PROMPT_PREPEND}')${B_GREEN}\][\@]\[${RED}$(echo '$(__git_ps1 ["%s"])')$(echo '${PROMPT_APPEND}')${B_BLUE}\]\w/\[${NO_COLOR}\]$ "
-}
+# function main() {
 
-main "$@"
+# }
+
+#  main "$@"
