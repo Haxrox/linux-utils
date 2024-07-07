@@ -1,6 +1,8 @@
 
 BASH_LIB_ROOT=$(dirname "${BASH_SOURCE[0]}")
 
+source "${BASH_LIB_ROOT}/bash_aliases"
+
 # Libraries
 for lib in $(ls -d ${BASH_LIB_ROOT}/*/); do
   source "${lib}/$(basename ${lib}).sh"
