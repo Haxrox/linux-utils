@@ -4,7 +4,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/colours.sh"
 
 PROMPT_PREPEND=""
 PROMPT_APPEND=""
-DEFAULT_PROMPT="\[$(echo '${PROMPT_PREPEND}')${B_GREEN}\][\@]\[${RED}$(echo '$(__git_ps1 ["%s"])')$(echo '${PROMPT_APPEND}')${B_BLUE}\]\w/\[${NO_COLOR}\]$ "
+DEFAULT_PROMPT="$(echo '${PROMPT_PREPEND}')\[${B_GREEN}\][\@]\[${RED}\]$(echo '$(__git_ps1 ["%s"])')$(echo '${PROMPT_APPEND}')\[${B_BLUE}\]\w/\[${NO_COLOR}\]$ "
 
 function setPrompt() {
   local ps1="$1"
