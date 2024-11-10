@@ -1,5 +1,5 @@
 #!/bin/bash
-# CREDits to: https://github.com/slomkowski/bash-full-of-colors/blob/master/bashrc.sh
+# Credits to: https://github.com/slomkowski/bash-full-of-colors/blob/master/bashrc.sh
 
 # Reset
 NO_COLOR='\e[0m'       # Text Reset

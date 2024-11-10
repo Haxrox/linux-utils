@@ -1,1 +1,2 @@
 alias rc="source ~/.bashrc"
+alias ll="ls -la"
